@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rela"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tercih"
+    android:orientation="vertical"
+    tools:context="com.evciller.sifrele.bilgi">
+
+
+    <TextView
+        android:id="@+id/basamak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/ok1"
+        android:layout_toRightOf="@+id/ok1"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/harf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ok1"
+        android:layout_marginTop="76dp"
+        android:layout_toEndOf="@+id/ok4"
+        android:layout_toRightOf="@+id/ok4"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/boyut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ok3"
+        android:layout_alignStart="@+id/ok3"
+        android:layout_below="@+id/ok3"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/simge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ok4"
+        android:layout_toEndOf="@+id/ok4"
+        android:layout_toRightOf="@+id/ok4"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/ok4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/ok1"
+        android:layout_toStartOf="@+id/ok1"
+        app:srcCompat="@drawable/sol" />
+
+    <ImageView
+        android:id="@+id/ok3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/simge"
+        android:layout_alignLeft="@+id/basamak"
+        android:layout_alignStart="@+id/basamak"
+        app:srcCompat="@drawable/yukari" />
+
+    <ImageView
+        android:id="@+id/ok1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/basamak"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/sol" />
+
+    <ImageView
+        android:id="@+id/ok2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/harf"
+        android:layout_toLeftOf="@+id/harf"
+        android:layout_toStartOf="@+id/harf"
+        app:srcCompat="@drawable/sol" />
+
+    <ImageView
+        android:id="@+id/ok5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/olustur"
+        android:layout_toEndOf="@+id/ok4"
+        android:layout_toRightOf="@+id/ok4"
+        app:srcCompat="@drawable/yukari" />
+
+    <TextView
+        android:id="@+id/olustur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="104dp"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/ok6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/olustur"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_toLeftOf="@+id/ok4"
+        android:layout_toStartOf="@+id/ok4"
+        app:srcCompat="@drawable/assagi" />
+
+    <ImageView
+        android:id="@+id/ok7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/kaydet"
+        android:layout_alignStart="@+id/kaydet"
+        android:layout_alignTop="@+id/ok6"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        app:srcCompat="@drawable/assagi" />
+
+    <ImageView
+        android:id="@+id/ok8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ok3"
+        android:layout_toEndOf="@+id/ok4"
+        android:layout_toRightOf="@+id/ok4"
+        app:srcCompat="@drawable/yukari" />
+
+    <ImageView
+        android:id="@+id/ok9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ok2"
+        android:layout_toEndOf="@+id/ok2"
+        android:layout_toRightOf="@+id/ok2"
+        app:srcCompat="@drawable/assagi" />
+
+    <TextView
+        android:id="@+id/tekrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/olustur"
+        android:layout_alignBottom="@+id/olustur"
+        android:layout_toLeftOf="@+id/ok4"
+        android:layout_toStartOf="@+id/ok4"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/kaydet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ok7"
+        android:layout_toEndOf="@+id/ok3"
+        android:layout_toRightOf="@+id/ok3"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/degis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/olustur"
+        android:layout_alignRight="@+id/olustur"
+        android:layout_centerVertical="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/kopyala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ok9"
+        android:layout_toLeftOf="@+id/basamak"
+        android:layout_toStartOf="@+id/basamak"
+        android:text="TextView" />
+
+</RelativeLayout>

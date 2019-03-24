@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.evciller.sifrele.Tercihler">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="16dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Kaç Basamaklı Olsun?"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <EditText
+
+                android:id="@+id/basamak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="68dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="Harfler olsun mu?"
+                    android:textSize="18sp"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="75dp" />
+
+                <RadioGroup
+                    android:id="@+id/HarfGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="97dp">
+
+                    <RadioButton
+                        android:id="@+id/harfli"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="Harfler olsun." />
+
+                    <RadioButton
+                        android:id="@+id/harfsiz"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Harfler olMAsın."
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="41dp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="154dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="Büyük küçük farkı olsun mu?"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toTopOf="@+id/BuKuGroup"
+                    tools:layout_editor_absoluteX="16dp" />
+
+                <RadioGroup
+                    android:id="@+id/BuKuGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="183dp">
+
+                    <RadioButton
+                        android:id="@+id/buyuk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:text="Sadece büyük harfler olsun." />
+
+                    <RadioButton
+                        android:id="@+id/kucuk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sadece küçük harfler olsun."
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="93dp" />
+
+                    <RadioButton
+                        android:id="@+id/ikiside"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="İkiside olsun." />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="240dp">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:text="Simgeler olsun mu?"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                tools:layout_editor_absoluteX="16dp" />
+
+            <RadioGroup
+                android:id="@+id/Simge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="269dp">
+
+                <RadioButton
+                    android:id="@+id/simgeli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Simgeli olsun." />
+
+                <RadioButton
+                    android:id="@+id/simgesiz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Simgesiz olsun." />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/SifreOlustur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sifre Olustur"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="447dp" />
+    </LinearLayout>
+
+</RelativeLayout>
