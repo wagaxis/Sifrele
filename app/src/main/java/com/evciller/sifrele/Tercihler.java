@@ -12,8 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+import java.util.concurrent.BrokenBarrierException;
 
 public class Tercihler extends AppCompatActivity {
 
@@ -77,10 +76,6 @@ public class Tercihler extends AppCompatActivity {
 
 //Button üzerindeki yazıyı yazdır
         SifreOlustur.setText(olustur);
-//Banner Reklam kod satırı. Reklam kodu "strings.xml" de
-        AdView adView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
 
 //!!!!!!!!!!!-->Üste tanımladığım "sifreOlustur" button unun ne yapacağını belirlerdim<--!!!!!!!!!!!
         SifreOlustur.setOnClickListener(new View.OnClickListener() {
