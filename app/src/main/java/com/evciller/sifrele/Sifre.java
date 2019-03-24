@@ -7,17 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
 import android.widget.Toast;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import java.lang.reflect.Array;
-import java.util.Arrays;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import java.util.Random;
 
 public class  Sifre extends AppCompatActivity {
 //Butonlar tanımlandı
-    Button res, kaydet, degis, degistir;
+    Button res, kaydet, degis, degisiKi, kopBir, kopiKi;
 //EditText Tadnımlandı
     EditText goruntu;
     //değişkenler tanımlandı
@@ -30,7 +33,10 @@ public class  Sifre extends AppCompatActivity {
 
     String tasi = "", kayitliSifre = "", qtasi = "";
     //Button isimleri
-    String resetButon = "Tercihleri Değiştir",degisButon = "Değiştir", kaydetButon = "Kaydet";
+    String resetButon = "Tercihleri\n"+ " Değiştir",degisButon = "Değiştir", kaydetButon = "Kaydet", kopyalaButton = "KOPYALA";
+
+    private static final String REKLAM_ID = "ca-app-pub-4906974194293016/7319692912";
+    private InterstitialAd interstitial;
 
 //Kaynak
     char [] Bharfler = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};//0
@@ -42,6 +48,21 @@ public class  Sifre extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sifre);
+
+        interstitial = new InterstitialAd(this);
+        interstitial.setAdUnitId(REKLAM_ID);
+        AdRequest adRequest1 = new AdRequest.Builder().build();
+
+        interstitial.loadAd(adRequest1);
+
+        interstitial.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                if (interstitial.isLoaded()) {
+                    interstitial.show();
+                }
+            }
+        });
 
         tasi = "";
 
@@ -58,11 +79,16 @@ public class  Sifre extends AppCompatActivity {
         Button res = (Button) findViewById(R.id.reset);//reset buttonu tanımladık
         Button kayit = (Button) findViewById(R.id.kayit);//kayıt buttonu tanımladık
         Button degis = (Button) findViewById(R.id.sifreDegis); //sifre değiştirme buttonları
-        Button degistir =(Button) findViewById(R.id.degistir);
+        Button degisiKi =(Button) findViewById(R.id.degistir);
+        Button kopBir = (Button) findViewById(R.id.kopyalaBir);
+        Button kopiKi = (Button) findViewById(R.id.kopyalaiKi);
+
         res.setText(resetButon);
         kayit.setText(kaydetButon);
         degis.setText(degisButon);
-        degistir.setText(degisButon);
+        degisiKi.setText(degisButon);
+        kopBir.setText(kopyalaButton);
+        kopiKi.setText(kopyalaButton);
 
         if(gelen != null)
         {
@@ -93,13 +119,17 @@ public class  Sifre extends AppCompatActivity {
 
         if(qBasamakSayisi<32)
         {
-            degistir.setVisibility(degistir.INVISIBLE);
+            degisiKi.setVisibility(degisiKi.INVISIBLE);
             degis.setVisibility(degis.VISIBLE);
+            kopiKi.setVisibility(degisiKi.INVISIBLE);
+            kopBir.setVisibility(degis.VISIBLE);
         }
         else
         {
-            degistir.setVisibility(degistir.VISIBLE);
+            degisiKi.setVisibility(degisiKi.VISIBLE);
             degis.setVisibility(degis.INVISIBLE);
+            kopiKi.setVisibility(degisiKi.VISIBLE);
+            kopBir.setVisibility(degis.INVISIBLE);
         }
 
         qsifreniz = new char[qBasamakSayisi];
@@ -210,7 +240,7 @@ public class  Sifre extends AppCompatActivity {
             }
         });
 
-        degistir.setOnClickListener(new View.OnClickListener() {
+        degisiKi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(Atercih == true)
@@ -268,5 +298,30 @@ public class  Sifre extends AppCompatActivity {
                 }
             }
         });
+
+        kopBir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String KopyaSifre = goruntu.getText().toString();
+                PanoyaKopyala(getApplicationContext(),KopyaSifre);
+                Toast.makeText(getApplicationContext(), "Kopyalandı",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        kopiKi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String KopyaSifre = goruntu.getText().toString();
+                PanoyaKopyala(getApplicationContext(),KopyaSifre);
+                Toast.makeText(getApplicationContext(), "Kopyalandı",Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void PanoyaKopyala(Context context, String text) {
+
+        android.content.ClipboardManager clipboard = (android.content.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+        android.content.ClipData clip = android.content.ClipData.newPlainText("Copied Text", text);
+        clipboard.setPrimaryClip(clip);
     }
 }

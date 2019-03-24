@@ -2,10 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.evciller.sifrele.Tercihler">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +25,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Kaç Basamaklı Olsun?"
+                android:gravity="left|center_vertical"
+                android:shadowColor="@color/common_google_signin_btn_text_dark_focused"
+                android:text="Kaç Basamaklı?"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColorHighlight="@color/common_google_signin_btn_text_dark_focused"
+                android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
+                android:textColorLink="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="18sp"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="16dp" />
@@ -37,7 +43,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -59,8 +67,13 @@
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:text="Harfler olsun mu?"
+                    android:gravity="left|center_vertical"
+                    android:shadowColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:text="Harfler"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textColorHighlight="@color/common_google_signin_btn_text_dark_focused"
+                    android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
+                    android:textColorLink="@color/common_google_signin_btn_text_dark_focused"
                     android:textSize="18sp"
                     tools:layout_editor_absoluteX="16dp"
                     tools:layout_editor_absoluteY="75dp" />
@@ -79,13 +92,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:text="Harfler olsun." />
+                        android:text="Olsun." />
 
                     <RadioButton
                         android:id="@+id/harfsiz"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Harfler olMAsın."
+                        android:text="Olmasın."
                         tools:layout_editor_absoluteX="16dp"
                         tools:layout_editor_absoluteY="41dp" />
                 </RadioGroup>
@@ -103,8 +116,13 @@
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:text="Büyük küçük farkı olsun mu?"
+                    android:gravity="left|center_vertical"
+                    android:shadowColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:text="Büyük-küçük harf tercihi?"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textColorHighlight="@color/common_google_signin_btn_text_dark_focused"
+                    android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
+                    android:textColorLink="@color/common_google_signin_btn_text_dark_focused"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toTopOf="@+id/BuKuGroup"
                     tools:layout_editor_absoluteX="16dp" />
@@ -122,15 +140,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@android:color/white"
-                        android:text="Sadece büyük harfler olsun." />
+                        android:text="Sadece büyük harfler." />
 
                     <RadioButton
                         android:id="@+id/kucuk"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Sadece küçük harfler olsun."
+                        android:text="Sadece küçük harfler."
                         tools:layout_editor_absoluteX="16dp"
                         tools:layout_editor_absoluteY="93dp" />
 
@@ -161,7 +178,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:text="Simgeler olsun mu?"
+                android:gravity="left|center_vertical"
+                android:shadowColor="@color/common_google_signin_btn_text_dark_focused"
+                android:text="Simgeler"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColorHighlight="@color/common_google_signin_btn_text_dark_focused"
+                android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
+                android:textColorLink="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                 tools:layout_editor_absoluteX="16dp" />
@@ -179,25 +202,43 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Simgeli olsun." />
+                    android:text="Olsun." />
 
                 <RadioButton
                     android:id="@+id/simgesiz"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Simgesiz olsun." />
+                    android:text="Olmasın." />
             </RadioGroup>
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/SifreOlustur"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sifre Olustur"
-            tools:layout_editor_absoluteX="129dp"
-            tools:layout_editor_absoluteY="447dp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/SifreOlustur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Şifre Oluştur"
+                tools:layout_editor_absoluteX="129dp"
+                tools:layout_editor_absoluteY="447dp" />
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/banner_ad_unit_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="end"
+                android:foregroundGravity="bottom"></com.google.android.gms.ads.AdView>
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>
